@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="employee_info_excel_report_form_view" model="ir.ui.view">
+        <field name="name">employee.info.excel.report.form.view</field>
+        <field name="model">employee.info.excel.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Exportar Lista de Luchadores">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_id" string="Base de Datos"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="generated_excel_report" string="Generar" type="object" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancelar" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+	
+	
+    <record id="nucleo_info_excel_report_form_view" model="ir.ui.view">
+        <field name="name">nucleo.info.excel.report.form.view</field>
+        <field name="model">nucleo.info.excel.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Exportar Lista de Nucleos">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_id" string="Base de Datos"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="generated_excel_report2" string="Generar" type="object" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancelar" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_employee_info_excel_report" model="ir.actions.act_window">
+        <field name="name">Exportar Data de Luchadores</field>
+        <field name="res_model">employee.info.excel.report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="view_type">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_nucleo_info_excel_report" model="ir.actions.act_window">
+        <field name="name">Exportar Data de Nucleos</field>
+        <field name="res_model">nucleo.info.excel.report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="view_type">form</field>
+        <field name="target">new</field>
+    </record>	
+	
+    <menuitem id="menu_employee_informatiom_excel_report" action="action_employee_info_excel_report" parent="hr.menu_hr_root"/>
+    <!-- <menuitem id="menu_nucleo_informatiom_excel_report" action="action_nucleo_info_excel_report" parent="hr.menu_hr_root"/> -->
+			  
+    <record id="wizard_employee_info_excel_report_form_view" model="ir.ui.view">
+        <field name="name">wizard.employee.info.excel.report.form.view</field>
+        <field name="model">wizard.emp.info.excel.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <h1>
+                            <field name="report" filename="name"/>
+                        </h1>
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Cancelar" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+	
+    <record id="wizard_nucleo_info_excel_report_form_view" model="ir.ui.view">
+        <field name="name">wizard.nucleo.info.excel.report.form.view</field>
+        <field name="model">wizard.nucleo.info.excel.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <h1>
+                            <field name="report" filename="name"/>
+                        </h1>
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Cancelar" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
